@@ -1,21 +1,27 @@
 
-# Parcial 2, parte 1.
+# Parcial 2, parte 3.
 
 Microservicios Eureka y Estudiante. 
 
+## Eureka
 ```bash
   http://localhost:8761
 
 ```
-## Ejercicios de teoria:
 
-### 1. Debe investigar y colocar en este documento el significado de cada uno de  los decoradores que se encuentra en esta clase (Entidad Alumno).
+## SpringGateway
+```bash
+  http://localhost:8090
 
-| Decorador             | Significado                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| @Entity |  Este decorador , indica que la clase representa una tabla en una base de datos relacional. Cada instancia de esta clase representa una fila en esa tabla. |
-| @Table | Este decorador se utiliza en combinación con @Entity para especificar el nombre de la tabla en la base de datos que está asociada con la entidad.|
-| @ToString | Este decorador, también parte de Lombok, genera automáticamente un método toString() para la clase que incluye la representación de cadena de todos los campos de la clase. |
-| @NoArgsConstructor | Este decorador, nuevamente de Lombok, genera automáticamente un constructor sin argumentos para la clase. Este constructor vacío puede ser útil en situaciones donde necesitas crear instancias de la clase sin proporcionar argumentos. |
+```
 
+## Usuarios
+```bash
+  http://localhost:65409
 
+```
+## (fetch = FetchType.LAZY)
+
+El argumento fetch = FetchType.LAZY dentro de la relación @OneToMany en la clase Curso indica que la carga de los objetos relacionados (Alumno en este caso) se realizará de forma perezosa o "lazy". Esto significa que los objetos de Alumno no se cargarán de la base de datos hasta que se acceda explícitamente a ellos.
+
+Al utilizar FetchType.LAZY, la carga de los alumnos se pospone hasta que realmente necesites acceder a ellos, lo que puede ayudar a optimizar el rendimiento de la aplicación al reducir la cantidad de datos que se recuperan de la base de datos en una sola operación.
